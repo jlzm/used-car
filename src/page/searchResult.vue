@@ -192,6 +192,7 @@
                             </div>
                         </router-link>
                     </div>
+                    <div v-if="!cardList">暂无数据</div>
                 </div>
             </div>
         </div>
