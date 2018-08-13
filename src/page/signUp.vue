@@ -61,7 +61,7 @@
                                         <input v-validator="'required&numeric'" error-el="#mail-error" type="text" name="name" placeholder="必填项" autocomplete="off" v-model="current.mail">
                                     </div>
                                     <div class="verification">
-                                        <input type="text" name="name" placeholder="输入验证码" autocomplete="off" v-model="current.emailCode">
+                                        <input type="text" name="name" placeholder="输入邮箱验证码" autocomplete="off" v-model="current.emailCode">
                                         <button :disabled="emailTimer" @click="getEmailCode();" type="button">
                                             <span v-if="count.mail">{{count.mail}}S重新获取</span>
                                             <span v-else>获取验证码</span>

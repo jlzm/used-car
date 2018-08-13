@@ -34,7 +34,7 @@
                                         <input type="text" name="name" placeholder="必填项" autocomplete="off" v-model="current.$unique">
                                     </div>
                                     <div class="verification">
-                                        <input type="text" name="name" placeholder="输入验证码" autocomplete="off">
+                                        <input type="text" name="name" placeholder="输入手机验证码" autocomplete="off">
                                         <button :disabled="phoneTimer" @click="getPhoneCode('phone');" type="button">
                                             <span v-if="count.phone">{{count.phone}}S重新获取</span>
                                             <span v-else>获取验证码</span>
@@ -47,7 +47,7 @@
                                         <input type="text" name="name" placeholder="必填项" autocomplete="off">
                                     </div>
                                     <div class="verification">
-                                        <input type="text" name="name" placeholder="输入手机验证码" autocomplete="off">
+                                        <input type="text" name="name" placeholder="输入邮箱验证码" autocomplete="off">
                                         <button :disabled="emailTimer" @click="getEmailCode('mail')" type="button">
                                             <span v-if="count.mail">{{count.mail}}</span>
                                             <span v-else>获取验证码</span>

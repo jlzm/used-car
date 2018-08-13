@@ -84,7 +84,6 @@ export default {
         this.setDefault(); // 如果传了props.default，就应该默认选中那一项
         this.apiConf = this.parseApi(); // 如果props.api是字符串，就应该将其解析为更好处理的对象类型
         let list = this.lsit;
-        console.log('this.lsit:', this.lsit);
         
         list && (this.result = Object.assign([], this.list)); // 如果传了静态数据，就应该将静态数据拷一份，否则就会导致越搜索越少        
     },

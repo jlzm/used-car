@@ -192,8 +192,8 @@
                             </div>
                         </router-link>
                     </div>
-                    <div v-if="!cardList">暂无数据</div>
                 </div>
+                <div v-if="!cardList">暂无数据</div>
             </div>
         </div>
         <Footer/>
@@ -289,7 +289,6 @@ export default {
             p.model_id && (brand_query = `and "model_id" = ${p.model_id}`);
             let query = `where("title" contains "${p.keyword ||
                 ""}"  ${brand_query} ${model_query})`;
-            console.log("query:", query);
 
             api("vehicle/read", { query: query, sort_by: p.sort_by }).then(
                 res => {
