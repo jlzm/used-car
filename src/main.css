@@ -1,0 +1,194 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+h1,h2,h3,h4 {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+
+input,
+button {
+    border: 1px solid #cbcbcb;
+    line-height: 1.1;
+    padding: 12px;
+}
+
+
+
+
+input:focus {
+    border:1px #ccc solid;
+    outline:none;
+}
+
+button {
+    cursor: pointer;
+    background: #3b404e;
+    color: #fff;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 文字排版 */
+
+.tac {
+    text-align: center
+}
+
+.taf {
+    text-align: left;
+}
+
+.tar {
+    text-align: right;
+}
+
+/* 鼠标手势 */
+
+
+.cp {
+    cursor: pointer;
+}
+
+.cp-all>* {
+    cursor: pointer;
+}
+
+.row{
+    font-size: 0;
+    display: block;
+}
+
+
+[class*="col-"],
+.col {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1rem;
+    /* min-height: 40px; */
+    /* border: 1px solid #ccc; */
+}
+
+.col-lg-1 {
+    width: 8.33333333%;
+}
+
+.col-lg-2 {
+    width: 16.66666666%;
+}
+
+
+.col-lg-3 {
+    width: 25%;
+}
+
+.col-lg-4 {
+    width: 33.33333333%;
+}
+
+.col-lg-5 {
+    width: 41.66666666%;
+}
+
+.col-lg-6 {
+    width: 50%;
+}
+
+.col-lg-7 {
+    width: 58.33333333%;
+}
+
+.col-lg-8 {
+    width: 66.66666666%;
+}
+
+.col-lg-9 {
+    width: 75%;
+}
+
+.col-lg-10 {
+    width: 83.333333335%;
+}
+
+.col-lg-11 {
+    width: 91.66666666%;
+}
+
+.col-lg-12 {
+    width: 100%;
+}
+
+
+.cf::after,
+.cf::before {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+.active{
+    background: #000;
+    border-left: 3px solid #2196f3;
+    color: #fff;
+}
+
+
+.delete {
+    border: 0;
+    background: #f44336;
+}
+
+.modify {
+    border: 0;
+    background: #03a9f4;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+

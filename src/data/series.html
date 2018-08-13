@@ -1,0 +1,28 @@
+<script src="../../node_modules/axios/dist/axios.js"></script>
+<script src="../lib/api.js"></script>
+
+
+<script>
+    let series = {
+        name: 'series',
+        structure: {
+            name: {             //车系
+                type: 'string',
+                nullable: false
+            },
+            brand_id: {         //品牌
+                type: 'integer',
+                nullable: true,
+                positive: true
+            },
+            model_id: {         //车型
+                type: 'integer',
+                nullable: true,
+                positive: true
+            }
+        }
+    };
+
+
+// api('MODEL/CREATE', series);
+</script>
