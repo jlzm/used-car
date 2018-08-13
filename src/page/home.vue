@@ -134,18 +134,18 @@
                 <div class="col-lg-7 buy-wrapper">
                     <div class="col-lg-2">
                         <a href="#" class="merchandise">
-                            <router-link to="/searchReesult" class="huge-font">买</router-link>
+                            <router-link to="/searchResult" class="huge-font">买</router-link>
                             <div>1年/2万公里质保</div>
                         </a>
                     </div>
                     <div class="col-lg-10">
                         <div class="row-padding">
-                            <router-link :to="'/searchReesult?brand_id=' + item.id" v-for="(item, index) in list.brand" :key="index" class="tag">
+                            <router-link :to="'/searchResult?brand_id=' + item.id" v-for="(item, index) in list.brand" :key="index" class="tag">
                                 {{item.name}}
                             </router-link>
                         </div>
                         <div class="row-padding">
-                            <router-link :to="'/searchReesult?model_id=' + item.id" v-for="(item, index) in list.model" :key="index" class="tag">
+                            <router-link :to="'/searchResult?model_id=' + item.id" v-for="(item, index) in list.model" :key="index" class="tag">
                                 {{item.name}}
                             </router-link>
                         </div>
