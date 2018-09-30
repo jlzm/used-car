@@ -158,7 +158,7 @@
                 </div>
                 <div class="row filter">
                     <div class="col rang sort">
-                        <span @click="toggleSort('id')">默认排序</span>
+                        <span >默认排序</span>
                         <span @click="toggleSort('id')" :class="{'active':searchParam.sort_by && searchParam.sort_by[0] == 'id'}">时间
                             <i v-if="searchParam.sort_by && searchParam.sort_by[0] == 'id' && searchParam.sort_by[1] == 'down'" class="fa fa-arrow-down" aria-hidden="true"></i>
                             <i v-else class="fa fa-arrow-up" aria-hidden="true"></i>
