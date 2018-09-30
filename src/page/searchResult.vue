@@ -122,18 +122,18 @@
                     </div>
                 </div>
                 <div class="row filter">
-                    <div class="col-lg-1 prop">
+                    <div class="col-lg-1 prop ">
                         <div>价格</div>
                     </div>
-                    <div class="col-lg-10 range">
-                        <a href="#">3万以下</a>
-                        <a href="#">3-5万</a>
-                        <a href="#">5-7万</a>
-                        <a href="#">7-9万</a>
-                        <a href="#">9-12万</a>
-                        <a href="#">12-16万</a>
-                        <a href="#">16-20万</a>
-                        <a href="#">20万以上</a>
+                    <div class="col-lg-10 range sort cp-all">
+                        <span :class="{'active': !searchParam.priceMin && !searchParam.priceMax}" @click="setQueryPriceRange()">不限</span>
+                        <span  :class="{active: searchParam.priceMin == 0 && searchParam.priceMax ==3}" @click="setQueryPriceRange (0,3)">3万以下</span>
+                        <span  :class="{active: searchParam.priceMin == 3 && searchParam.priceMax ==5}" @click="setQueryPriceRange (3,5)">3-5万</span>
+                        <span  :class="{active: searchParam.priceMin == 5 && searchParam.priceMax ==7}" @click="setQueryPriceRange (5,7)">5-7万</span>
+                        <span  :class="{active: searchParam.priceMin == 7 && searchParam.priceMax ==9}" @click="setQueryPriceRange (7,9)">7-9万</span>
+                        <span  :class="{active: searchParam.priceMin == 9 && searchParam.priceMax ==16}"@click="setQueryPriceRange (9,16)">9-16万</span>
+                        <span  :class="{active: searchParam.priceMin == 16 && searchParam.priceMax ==25}" @click="setQueryPriceRange (16,25)">16-25万</span>
+                        <span :class="{active: searchParam.priceMin == 25}" @click="setQueryPriceRange (25,0)">25万以上</span>
                         <div class="price-range">
                             <input type="text" name="" id="">-
                             <input type="text" name="" id="">
@@ -260,6 +260,23 @@ export default {
 
             return query;
         },
+        // 价格筛选
+        setQueryPriceRange(min, max) {
+            let query = this.parseRouteQuery();
+            if (!min && !max) {
+                delete query.priceMin;
+                delete query.priceMax;
+            } else {
+                let condition = {
+                    priceMin: min,
+                    priceMax: max
+                };
+
+                query = Object.assign({}, query, condition);
+            }
+
+            this.$router.replace({ query });
+        },
         onSubmit() {
             this.search();
             console.log("this.$route.query:", this.$route.query);
@@ -284,11 +301,15 @@ export default {
             let p = this.searchParam;
 
             let brand_query = "",
-                model_query = "";
+                model_query = "",
+                price_min_query = "",
+                price_max_query = "";
             p.brand_id && (brand_query = `and "brand_id" = ${p.brand_id}`);
-            p.model_id && (brand_query = `and "model_id" = ${p.model_id}`);
+            p.model_id && (model_query = `and "model_id" = ${p.model_id}`);
+            p.priceMin && (price_min_query = `and "price" >= ${p.priceMin}`);
+            p.priceMax && (price_max_query = `and "price" <= ${p.priceMax}`);
             let query = `where("title" contains "${p.keyword ||
-                ""}"  ${brand_query} ${model_query})`;
+                ""}"  ${brand_query} ${model_query} ${price_min_query} ${price_max_query})`;
 
             api("vehicle/read", { query: query, sort_by: p.sort_by }).then(
                 res => {
