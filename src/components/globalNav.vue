@@ -6,7 +6,7 @@
     <div :style="{marginBottom: this.pushDown ? '15px' : '0'}" class="main-nav">
         <div class="container cf">
             <div class="content fl">
-                <router-link to="/" href="#" class="logo"></router-link>
+                <router-link to="/" href="#" class="logo">Logo</router-link>
                 <router-link to="/searchResult" href="#" class="nav-item">搜车</router-link>
                 <router-link to="/admin/user" href="#" class="nav-item">管理员</router-link>
             </div>
