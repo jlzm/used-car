@@ -149,22 +149,13 @@
                                 {{item.name}}
                             </router-link>
                         </div>
-                        <div class="col-lg-6 row-padding">
-                            <form action="">
-                                <input type="search" name="" id="" placeholder="请输入关键字">
-                                <button type="submit">搜索</button>
-                            </form>
-                        </div>
-
-                    </div>
-                    <div class="thumber">
-                        <img src="//img1.rrcimg.com/dist/pc/images/sem-1-44a09bdf.png" alt="">
                     </div>
                 </div>
                 <div class="col-lg-5 sell-wrapper">
                     <div class="col-lg-4">
                         <a href="#" class="merchandise">
-                            <router-link to="publish" class="huge-font">卖</router-link>
+                            <router-link v-if="!unifo" to="login" class="huge-font">卖</router-link>
+                            <router-link v-if="unifo" to="publish" class="huge-font">卖</router-link>
                             <div>平均7天售出</div>
                         </a>
                     </div>
@@ -175,13 +166,7 @@
                                 <input type="nubmer" placeholder="请输入手机号">
                                 <button type="submit">帮我卖车</button>
                             </form>
-                            <div class="choice">
-                                <span>后续计划</span>
-                            </div>
                         </div>
-                    </div>
-                    <div class="thumber">
-                        <img src="//img1.rrcimg.com/dist/pc/images/sem-2-79db1c36.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -223,7 +208,11 @@
                             <span class="btn-primary cp">免费咨询</span>
                         </div>
                     </div>
-                    <div v-if="!cardList">暂无数据</div>
+                    <div v-if="!cardList" >
+                        <h3 style="color:red">
+                            暂无车辆
+                        </h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -237,6 +226,9 @@
 <script>
 import api from "../lib/api.js";
 import "../css/vehicle-list.css";
+
+import session from "../lib/session";
+
 import VehicleCardImg from "../mixins/vehicleCardImg.vue";
 import ReaderName from "../mixins/readerName.vue";
 import GlobalNav from "../components/globalNav.vue";
@@ -256,6 +248,7 @@ export default {
     },
     data() {
         return {
+            uinfo: session.uinfo(),
             list: {},
             cardList: [],
             model: {}

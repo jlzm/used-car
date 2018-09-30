@@ -70,6 +70,7 @@ button {
 
 .cp {
     cursor: pointer;
+    background: #000;
 }
 
 .cp-all>* {

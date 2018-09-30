@@ -158,19 +158,21 @@
                 </div>
                 <div class="row filter">
                     <div class="col rang sort">
-                        <span>默认排序</span>
-                        <span @click="toggleSort('id')">时间
-                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        <span @click="toggleSort('id')">默认排序</span>
+                        <span @click="toggleSort('id')" :class="{'active':searchParam.sort_by && searchParam.sort_by[0] == 'id'}">时间
+                            <i v-if="searchParam.sort_by && searchParam.sort_by[0] == 'id' && searchParam.sort_by[1] == 'down'" class="fa fa-arrow-down" aria-hidden="true"></i>
+                            <i v-else class="fa fa-arrow-up" aria-hidden="true"></i>
                         </span>
-                        <span @click="toggleSort('price')">价格
-                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        <span @click="toggleSort('price')" :class="{'active':searchParam.sort_by && searchParam.sort_by[0] == 'price'}">价格
+                            <i v-if="searchParam.sort_by && searchParam.sort_by[0] == 'price' && searchParam.sort_by[1] == 'down'" class="fa fa-arrow-down" aria-hidden="true"></i>
+                            <i v-else class="fa fa-arrow-up" aria-hidden="true"></i>
                         </span>
-                        <span>里程
+                        <!-- <span>里程
                             <i class="fa fa-arrow-down" aria-hidden="true"></i>
                         </span>
                         <span>车龄
                             <i class="fa fa-arrow-down" aria-hidden="true"></i>
-                        </span>
+                        </span> -->
                     </div>
                 </div>
             </div>
