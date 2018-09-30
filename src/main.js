@@ -36,7 +36,7 @@ const RouterConfig = {
             path: '/',
             component: Home,
             meta: {
-                title: '首页'
+                title: 'car-首页'
             }
 
         },
@@ -44,35 +44,35 @@ const RouterConfig = {
             path: '/login',
             component: Login,
             meta: {
-                title: '登入页'
+                title: 'car-登入页'
             }
         },
         {
             path: '/signUp',
             component: SignUp,
             meta: {
-                title: '注册页'
+                title: 'car-注册页'
             }
         },
         {
             path: '/publish',
             component: Publish,
             meta: {
-                title: '首页'
+                title: 'car-首页'
             }
         },
         {
             path: '/searchResult',
             component: SearchResult,
             meta: {
-                title: '搜索页'
+                title: 'car-搜索页'
             }
         },
         {
             path: '/detail/:id',
             component: Detail,
             meta: {
-                title: '详情页'
+                title: 'car-详情页'
             }
         },
         {
@@ -82,14 +82,14 @@ const RouterConfig = {
                     path: 'user',
                     component: AdminUser,
                     meta: {
-                        title: '用户管理'
+                        title: 'car-用户管理'
                     }
                 },
                 {
                     path: 'vehicle',
                     component: AdminVehicle,
                     meta: {
-                        title: '上架管理'
+                        title: 'car-上架管理'
                     }
                 },
                 {
@@ -100,28 +100,28 @@ const RouterConfig = {
                     path: 'brand',
                     component: AdminBrand,
                     meta: {
-                        title: '品牌管理'
+                        title: 'car-品牌管理'
                     }
                 },
                 {
                     path: 'model',
                     component: AdminModel,
                     meta: {
-                        title: '车型管理'
+                        title: 'car-车型管理'
                     }
                 },
                 {
                     path: 'series',
                     component: AdminSeries,
                     meta: {
-                        title: '车系管理'
+                        title: 'car-车系管理'
                     }
                 },
                 {
                     path: 'report',
                     component: AdminReport,
                     meta: {
-                        title: '检测报告'
+                        title: 'car-检测报告'
                     }
                 },
             ]
