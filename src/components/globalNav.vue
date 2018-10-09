@@ -13,7 +13,7 @@
             <div class="fr">
                 <span v-if="uinfo">
                     <router-link to="/" class="login nav-item">{{uinfo.username || uinfo.phone}}</router-link>
-                    <a @click="logout()" href=":;" class="login nav-item">登出</a>
+                    <a @click="logout()" class="login nav-item">登出</a>
                     <router-link to="/publish" href="#" class="login nav-item">发布二手车</router-link>
                 </span>
                 <span v-else>
