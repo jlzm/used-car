@@ -227,12 +227,12 @@
 import api from "../lib/api.js";
 import "../css/vehicle-list.css";
 
-import session from "../lib/session";
+import session from "../lib/session.js";
 
 import VehicleCardImg from "../mixins/vehicleCardImg.vue";
 import ReaderName from "../mixins/readerName.vue";
 import GlobalNav from "../components/globalNav.vue";
-import Footer from "../components/footer";
+import Footer from "../components/footer.vue";
 
 export default {
     components: {
@@ -248,7 +248,7 @@ export default {
     },
     data() {
         return {
-            uinfo: session.uinfo(),
+            unifo: session.uinfo(),
             list: {},
             cardList: [],
             model: {}
